@@ -1,18 +1,18 @@
 const config = {
   infuraProvider: 'https://mainnet.infura.io/v3/62bb6bf457034ced8455192eee1a544a',
-  xearnpoolone:'0xdD6ED4951F2B42C2134539D090EE945c59e8847f',
-  xearnpooltwo:'0x781967CBb9Efc221280352c7Df5Bc7A6bd07d131',
-  xearnpoolthree:'0x740Ffa21C05958285dfb648830A19a5C739D4aB7',
-  xearnpoolfour:'0xBE7253A6e884421891c210337aB941cAE26c3453',
-  xearnpoolfive:'0xaB8cFD5e7A8638A8a92Dffb0CD5244Dcdf5AE6ad',
-  xearntoken:'0xe53940db3CE1cCC33375129b6E211b39221035E4',
-  qrxuniswaptoken:'0xF227e97616063A0EA4143744738f9def2aa06743',
-  xrnuniswaptoken:'0x058CE49Da256a78B47C055bE1fd9b409e21311f1',
-  qrxxrnuniswaptoken:'0xD82183c4E132686Bc460B9D67ce20177fef4FAA2',
+  xbsepoolone:'0xAF1D84467501BC26171e16BF6426D21a6dFf24c1',
+  xbsepooltwo:'0xe455F092E352Af6fa131c38b77603D8BA6852ac8',
+  xbsepoolthree:'0x0168c8dFbDfa63464360fbb68024e7648105a8F9',
+  xbsepoolfour:'0x3dA6C829d84AE08f43D9963F9f666E9e9cd2A935',
+  xbsepoolfive:'0x3E743afC106f4b221E23cc33e026D2b070f3645A',
+  xearntoken:'0xe3599911f6dDC993062599e53cEb9785F8f31EE4',
+  bseuniswaptoken:'0x9d03B651b7fDD85d7C87D23AAadB54Ed178f6fca',
+  xbseuniswaptoken:'0x03FDF7C42204eFCF3F3F974760b5614A4fB1ffbD',
+  xbsebseuniswaptoken:'0x1ad97bD00870abF0A78AA171FDa709B61A398531',
   usdttoken:'0xdAC17F958D2ee523a2206206994597C13D831ec7',
   usdctoken:'0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
   uniswapRewardsAddres: '',
-  xearnrewardsabi:[
+  xbserewardsabi:[
     {
       "anonymous": false,
       "inputs": [
