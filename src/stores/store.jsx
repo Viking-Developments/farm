@@ -383,6 +383,7 @@ class Store {
           token.balance = data[0]
           token.stakedBalance = data[1]
           token.rewardsAvailable = data[2]
+         
 
           callbackInner(null, token)
         })
