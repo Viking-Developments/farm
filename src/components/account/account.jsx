@@ -28,7 +28,7 @@ const styles = theme => ({
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    background: colors.blue,
+    background: "#061831",
     minWidth: '100vw',
     padding: '36px 24px'
   },
@@ -42,7 +42,7 @@ const styles = theme => ({
   },
   actionButton: {
     color: colors.white,
-    borderColor: colors.white
+    borderColor: colors.white,
   },
   notConnectedRoot: {
     flex: 1,
