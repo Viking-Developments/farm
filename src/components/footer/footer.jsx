@@ -126,8 +126,8 @@ class Footer extends Component {
         <div className={classes.footer}>
           <div className={classes.footerLinks}>
               <Typography className={ classes.footerText } variant='h6'>
-                <Link href="/">{t('Footer.Home')}</Link>
-               
+                <Link href="/">{t('Footer.Home')}</Link> 
+                <Link target ="_blank" href="https://t.me/buysell_network">Telegram</Link>
                 {this.renderRewards()}
               </Typography>
           </div>
