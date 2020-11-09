@@ -53,7 +53,7 @@ const styles = theme => ({
       }
     },
     '& .title': {
-      color: colors.pink
+      color: "#061831",
     },
     '& .icon': {
       color: colors.pink
@@ -187,7 +187,8 @@ class Home extends Component {
     return (
       <div className={ classes.root }>
         <Card className={ `${classes.card} ${classes.earn}` } onClick={ () => { this.nav(location.pathname+'staking') } }>
-          <DetailsIcon className={ `${classes.icon} icon` } />
+        
+          <img src={require("../../assets/bslogos.png")} style={{height:"100px", width:"100px"}}className={classes.icon}/>
           <Typography variant={'h3'} className={ `${classes.title} title` }>Stake</Typography>
         </Card>
         {/*<Card className={ `${classes.card} ${classes.zap}` } onClick={ () => { this.nav(location.pathname+'propose') } }>
