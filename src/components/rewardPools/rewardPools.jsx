@@ -147,9 +147,15 @@ const styles = theme => ({
     paddingBottom: '20px',
     color: colors.text
   },
+  poolName2: {
+    color: colors.text
+  },
   tokensList: {
     color: colors.darkGray,
     paddingBottom: '20px',
+  },
+  tokensList2: {
+    color: colors.darkGray,
   },
   poolWebsite: {
     color: colors.darkGray,
@@ -272,6 +278,8 @@ class RewardPools extends Component {
         <Typography variant={ 'h4'}>{t('RewardPools.Open')}</Typography>
       
       </Button>
+      <Typography varian='h4' className={ classes.tokensList2 } align='center'>Total rewards claimed: </Typography>
+      <Typography style={{marginBottom:"10px"}} variant='h4' className={ classes.poolName2 }>{ rewardPool.tokens[0].rewardsClaimed } xBSE</Typography>
     </div>)
   }
 

@@ -133,6 +133,8 @@ class Store {
               balance: 0,
               stakedBalance: 0,
               rewardsAvailable: 0,
+              rewardsClaimed:0,
+              nextHalving:0
             }
           ]
         },
@@ -157,6 +159,8 @@ class Store {
               balance: 0,
               stakedBalance: 0,
               rewardsAvailable: 0,
+              rewardsClaimed:0,
+              nextHalving:0
             }
           ]
         },
@@ -181,6 +185,8 @@ class Store {
               balance: 0,
               stakedBalance: 0,
               rewardsAvailable: 0,
+              rewardsClaimed:0,
+              nextHalving:0
             }
           ]
         },
@@ -205,6 +211,8 @@ class Store {
               balance: 0,
               stakedBalance: 0,
               rewardsAvailable: 0,
+              rewardsClaimed:0,
+              nextHalving:0
             }
           ]
         },
@@ -229,6 +237,8 @@ class Store {
               balance: 0,
               stakedBalance: 0,
               rewardsAvailable: 0,
+              rewardsClaimed:0,
+              nextHalving:0
             }
           ]
         },
@@ -373,7 +383,9 @@ class Store {
         async.parallel([
           (callbackInnerInner) => { this._getERC20Balance(web3, token, account, callbackInnerInner) },
           (callbackInnerInner) => { this._getstakedBalance(web3, token, account, callbackInnerInner) },
-          (callbackInnerInner) => { this._getRewardsAvailable(web3, token, account, callbackInnerInner) }
+          (callbackInnerInner) => { this._getRewardsAvailable(web3, token, account, callbackInnerInner) },
+          (callbackInnerInner) => { this._getTotalAccumulatedRewards(web3, token, account, callbackInnerInner) },
+          (callbackInnerInner) => { this._getRewardHalving(web3, token, account, callbackInnerInner) }
         ], (err, data) => {
           if(err) {
             console.log(err)
@@ -383,7 +395,8 @@ class Store {
           token.balance = data[0]
           token.stakedBalance = data[1]
           token.rewardsAvailable = data[2]
-         
+          token.rewardsClaimed = data[3]
+          token.nextHalving = data[4] - (Date.now() / 1000)
 
           callbackInner(null, token)
         })
@@ -538,6 +551,29 @@ class Store {
 
     try {
       var earned = await erc20Contract.methods.earned(account.address).call({ from: account.address });
+      earned = web3.utils.fromWei(earned.toString(),"ether");
+      callback(null, parseFloat(earned))
+    } catch(ex) {
+      return callback(ex)
+    }
+  }
+
+  _getRewardHalving = async (web3, asset, account, callback) => {
+    let erc20Contract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress)
+
+    try {
+      const periodFinish = await erc20Contract.methods.periodFinish().call();
+      callback(null, periodFinish)
+    } catch(ex) {
+      return callback(ex)
+    }
+  }
+
+    _getTotalAccumulatedRewards = async (web3, asset, account, callback) => {
+    let erc20Contract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress)
+
+    try {
+      var earned = await erc20Contract.methods.totalAccumulatedReward().call();
       earned = web3.utils.fromWei(earned.toString(),"ether");
       callback(null, parseFloat(earned))
     } catch(ex) {
