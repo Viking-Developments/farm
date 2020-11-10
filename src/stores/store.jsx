@@ -115,8 +115,8 @@ class Store {
         {
           id: 'xBSE / ETH UNISWAP LP',
           name: 'xBSE / ETH UNISWAP LP',
-          website: 'UNISWAP xBSE / ETH',
-          link: 'https://app.uniswap.org/#/add/0xe3599911f6dDC993062599e53cEb9785F8f31EE4/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+          website: 'Add Liquidity on Uniswap',
+          link: 'https://app.uniswap.org/#/add/0x69861C005D72C77b9E7EF68F4dF6E7f09d6310eb/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
           YieldCalculatorLink: "", 
           depositsEnabled: true,
           tokens: [
@@ -141,7 +141,7 @@ class Store {
         {
           id: 'BSE / ETH UNISWAP LP',
           name: 'BSE / ETH UNISWAP LP',
-          website: 'UNISWAP BSE / ETH',
+          website: 'Add Liquidity on Uniswap',
           link: 'https://app.uniswap.org/#/add/0xA30189d8255322A2F8B2a77906B000aeB005570c/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
           YieldCalculatorLink: "", //收益率器地址
           depositsEnabled: true,
@@ -165,62 +165,10 @@ class Store {
           ]
         },
         {
-          id: 'USDT Pool',
-          name: 'USDT Pool',
-          website: 'farm.buy-sell.io',
-          link: '',
-          YieldCalculatorLink: "", 
-          depositsEnabled: true,
-          tokens: [
-            {
-              id: 'USDT',
-              address: config.usdttoken,
-              symbol: 'USDT',
-              abi: config.erc20ABI,
-              decimals: 6,
-              rewardsAddress: config.xbsepoolthree,
-              rewardsABI: config.xbserewardsabi,
-              rewardsSymbol: 'xBSE',
-              decimals: 6,
-              balance: 0,
-              stakedBalance: 0,
-              rewardsAvailable: 0,
-              rewardsClaimed:0,
-              nextHalving:0
-            }
-          ]
-        },
-        {
-          id: 'USDC Pool',
-          name: 'USDC Pool',
-          website: 'farm.buy-sell.io',
-          link: '',
-          YieldCalculatorLink: "", 
-          depositsEnabled: true,
-          tokens: [
-            {
-              id: 'USDC',
-              address: config.usdctoken,
-              symbol: 'USDC',
-              abi: config.erc20ABI,
-              decimals: 6,
-              rewardsAddress: config.xbsepoolfour,
-              rewardsABI: config.xbserewardsabi,
-              rewardsSymbol: 'xBSE',
-              decimals: 6,
-              balance: 0,
-              stakedBalance: 0,
-              rewardsAvailable: 0,
-              rewardsClaimed:0,
-              nextHalving:0
-            }
-          ]
-        },
-        {
           id: 'xBSE/BSE UNISWAP LP',
           name: 'xBSE/BSE UNISWAP LP',
-          website: 'farm.buy-sell.io',
-          link: 'https://app.uniswap.org/#/add/0xA30189d8255322A2F8B2a77906B000aeB005570c/0xe3599911f6dDC993062599e53cEb9785F8f31EE4',
+          website: 'Add Liquidity on Uniswap',
+          link: 'https://app.uniswap.org/#/add/0xA30189d8255322A2F8B2a77906B000aeB005570c/0x69861C005D72C77b9E7EF68F4dF6E7f09d6310eb',
           YieldCalculatorLink: "", 
           depositsEnabled: true,
           tokens: [
@@ -230,7 +178,7 @@ class Store {
               symbol: 'UNI',
               abi: config.erc20ABI,
               decimals: 18,
-              rewardsAddress: config.xbsepoolfive,
+              rewardsAddress: config.xbsepoolthree,
               rewardsABI: config.xbserewardsabi,
               rewardsSymbol: 'xBSE',
               decimals: 18,

@@ -20,6 +20,7 @@ import {
   GET_BALANCES_RETURNED,
 } from '../../constants'
 
+import TypeIt from "typeit-react";
 const styles = theme => ({
   root: {
     flex: 1,
@@ -141,11 +142,12 @@ const styles = theme => ({
     width: '100%',
     color: colors.darkGray,
     minWidth: '100%',
-    marginLeft: '20px'
+    textAlign:"center"
   },
   poolName: {
     paddingBottom: '20px',
-    color: colors.text
+    color: colors.text,
+    textAlign:"center"
   },
   poolName2: {
     color: colors.text
@@ -235,8 +237,45 @@ class RewardPools extends Component {
             <div style={{ background: '#DC6BE5', opacity: '1', borderRadius: '10px', width: '10px', height: '10px', marginRight: '3px', marginTop:'3px', marginLeft:'6px' }}></div>
           </Card>
         </div>
-        <div className={ classes.rewardPools }>
-          <Typography variant={ 'h3'} className={ classes.text } noWrap>{t('RewardPools.WhichTokens')}</Typography>
+        <div className={ classes.rewardPools }> {/*<Typography variant={ 'h3'} className={ classes.text } noWrap>{t('RewardPools.WhichTokens')}</Typography>*/}
+          <Typography variant={ 'h3'} className={ classes.text } noWrap>Would you like to <TypeIt
+                  options={{
+                    loop: true
+                  }}
+                  getBeforeInit={instance => {
+                    instance
+                      .options({
+                        speed: 150
+                      })
+                      .type('Stake?')
+                      .pause(1500)
+                      .options({
+                        speed: 30
+                      })
+                      .delete()
+
+                      .options({
+                        speed: 150
+                      })
+                      .type('Withdraw?')
+                      .pause(1500)
+                      .options({
+                        speed: 30
+                      })
+                      .delete()
+
+                      .options({
+                        speed: 150
+                      })
+                      .type('Claim Rewards?')
+                      .pause(1500)
+                      .options({
+                        speed: 30
+                      })
+                      .delete()
+                    return instance;
+                  }}
+                /></Typography>
           {
             this.renderRewards()
           }
