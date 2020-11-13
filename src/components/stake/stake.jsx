@@ -96,9 +96,9 @@ const styles = theme => ({
     fontSize: '0.83rem',
     textOverflow:'ellipsis',
     cursor: 'pointer',
-    padding: '28px 30px',
-    borderRadius: '50px',
-    border: '1px solid '+colors.borderBlue,
+    padding: '10px 30px',
+    borderRadius: '10px',
+    border: '1px solid rgb(6 24 49)',
     alignItems: 'center',
     maxWidth: '500px',
     [theme.breakpoints.up('md')]: {
@@ -124,8 +124,8 @@ const styles = theme => ({
   overview: {
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '28px 30px',
-    borderRadius: '50px',
+    padding: '.8rem 1rem',
+    borderRadius: '5px',
     border: '1px solid '+colors.borderBlue,
     alignItems: 'center',
     marginTop: '40px',
@@ -134,12 +134,22 @@ const styles = theme => ({
   },
   overviewField: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    padding: '.5rem 1rem',
+    borderRadius: '5px',
+    fontFamily: 'sans',
+    boxShadow: '0 .5rem 1rem rgba(0,0,0,.15)!important'
   },
   overviewTitle: {
-    color: colors.darkGray
+    color: '#fff',
+    textTransform: 'uppercase',
+    marginBottom: '1rem',
+    fontWeight: '500',
+    fontSize: '1rem'
   },
   overviewValue: {
+    fontWeight: '500',
+    textAlign: 'center'
 
   },
   actions: {
@@ -152,7 +162,7 @@ const styles = theme => ({
     background: colors.white,
     border: '1px solid '+colors.borderBlue,
     padding: '28px 30px',
-    borderRadius: '50px',
+    borderRadius: '10px',
     marginTop: '40px'
   },
   actionContainer: {
@@ -164,16 +174,18 @@ const styles = theme => ({
   },
   primaryButton: {
     '&:hover': {
-      backgroundColor: "#000",
+      backgroundColor: "#d17813",
+      borderColor: '#d17813'
     },
-    padding: '20px 32px',
-    backgroundColor: "#000",
-    borderRadius: '50px',
+    padding: '15px 32px',
+    backgroundColor: "#ffb158",
+    borderColor: '#ffb158',
+    borderRadius: '10px',
     fontWeight: 500,
   },
   actionButton: {
-    padding: '20px 32px',
-    borderRadius: '50px',
+    padding: '15px 32px',
+    borderRadius: '10px',
   },
   buttonText: {
     fontWeight: '700',
@@ -367,15 +379,15 @@ class Stake extends Component {
           </Card>
         </div>
         <div className={ classes.overview }>
-          <div className={ classes.overviewField }>
+          <div className={ classes.overviewField } style={{background: 'rgb(155, 44, 44)',}}>
             <Typography variant={ 'h3' } className={ classes.overviewTitle }>{t('Stake.YourBalance')}</Typography>
             <Typography variant={ 'h2' } className={ classes.overviewValue }>{ Number(pool.tokens[0].balance) ? Number(pool.tokens[0].balance).toFixed(2) : "0" }  { pool.tokens[0].symbol }</Typography>
           </div>
-          <div className={ classes.overviewField }>
+          <div className={ classes.overviewField } style={{background: 'rgb(74, 85, 104)'}}>
             <Typography variant={ 'h3' } className={ classes.overviewTitle }>{t('Stake.CurrentlyStaked')}</Typography>
             <Typography variant={ 'h2' } className={ classes.overviewValue }>{ Number(pool.tokens[0].stakedBalance) ? Number(pool.tokens[0].stakedBalance).toFixed(6) : "0" }</Typography>
           </div>
-          <div className={ classes.overviewField }>
+          <div className={ classes.overviewField } style={{background: 'rgb(26, 32, 44)'}}>
             <Typography variant={ 'h3' } className={ classes.overviewTitle }>{t('Stake.RewardsAvailable')}</Typography>
             <Typography variant={ 'h2' } className={ classes.overviewValue }>{ pool.tokens[0].rewardsSymbol == '$' ? pool.tokens[0].rewardsSymbol : '' } { pool.tokens[0].rewardsAvailable ? pool.tokens[0].rewardsAvailable.toFixed(2) : "0" } { pool.tokens[0].rewardsSymbol != '$' ? pool.tokens[0].rewardsSymbol : '' }</Typography>
           </div>

@@ -113,8 +113,10 @@ class Store {
       },
       rewardPools: [
         {
-          id: 'xBSE / ETH UNISWAP LP',
+          id: 'xBSE-ETH UNI LP',
+          // id: 'xBSE / ETH UNISWAP LP',
           name: 'xBSE / ETH UNISWAP LP',
+          image: 'ps1',
           website: 'Add Liquidity on Uniswap',
           link: 'https://app.uniswap.org/#/add/0x69861C005D72C77b9E7EF68F4dF6E7f09d6310eb/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
           YieldCalculatorLink: "", 
@@ -139,8 +141,10 @@ class Store {
           ]
         },
         {
-          id: 'BSE / ETH UNISWAP LP',
+          id: 'BSE-ETH UNI LP',
+          // id: 'BSE / ETH UNISWAP LP',
           name: 'BSE / ETH UNISWAP LP',
+          image: 'ps2',
           website: 'Add Liquidity on Uniswap',
           link: 'https://app.uniswap.org/#/add/0xA30189d8255322A2F8B2a77906B000aeB005570c/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
           YieldCalculatorLink: "", //收益率器地址
@@ -165,8 +169,10 @@ class Store {
           ]
         },
         {
-          id: 'xBSE/BSE UNISWAP LP',
+          id: 'xBSE-BSE UNI LP',
+          // id: 'xBSE/BSE UNISWAP LP',
           name: 'xBSE/BSE UNISWAP LP',
+          image: 'ps3',
           website: 'Add Liquidity on Uniswap',
           link: 'https://app.uniswap.org/#/add/0xA30189d8255322A2F8B2a77906B000aeB005570c/0x69861C005D72C77b9E7EF68F4dF6E7f09d6310eb',
           YieldCalculatorLink: "", 

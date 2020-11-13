@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+
 import {
   Typography,
   Button,
@@ -101,9 +103,9 @@ const styles = theme => ({
     fontSize: '0.83rem',
     textOverflow:'ellipsis',
     cursor: 'pointer',
-    padding: '28px 30px',
-    borderRadius: '50px',
-    border: '1px solid '+colors.borderBlue,
+    padding: '10px 30px',
+    borderRadius: '10px',
+    border: '1px solid rgb(6 24 49)',
     alignItems: 'center',
     maxWidth: '500px',
     [theme.breakpoints.up('md')]: {
@@ -125,29 +127,36 @@ const styles = theme => ({
     flexWrap: 'wrap'
   },
   rewardPoolContainer: {
+    '&:hover': {
+      transition: '1.2s',
+
+    },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
-    padding: '28px 30px',
-    borderRadius: '50px',
-    border: '1px solid '+colors.borderBlue,
+    padding: '28px 20px',
+    borderRadius: '8px',
+    border: '1px solid #061831',
     margin: '20px',
     background: colors.white,
     minHeight: '300px',
     minWidth: '200px',
+    transition: 'transform 1.2s',
   },
   text: {
     width: '100%',
-    color: colors.darkGray,
+    color: '#fff',
     minWidth: '100%',
     textAlign:"center"
   },
   poolName: {
     paddingBottom: '20px',
-    color: colors.text,
-    textAlign:"center"
+    textAlign:"center",
+    color: '#061831',
+    fontWeight: '700',
+    fontSize: '1.2rem'
   },
   poolName2: {
     color: colors.text
@@ -163,6 +172,58 @@ const styles = theme => ({
     color: colors.darkGray,
     paddingBottom: '20px',
     textDecoration: 'none'
+  },
+  swapHeader: {
+    textAlign: 'center',
+    color: '#061831',
+    fontWeight: '700',
+    fontSize: '1.2rem'
+  },
+  btnStake: {
+    '&:hover': {
+      background: '#cd7d23',
+      color: '#fff',
+    },
+    display: 'inline-block',
+    fontWeight: '400',
+    textAlign: 'center',
+    verticalAlign: 'middle',    
+    userSelect: 'none',
+    border: '1px solid #ffb158',
+    background: '#ffb158',
+    borderRadius: '8px',
+    // padding: '.375rem .75rem',
+    color: '#fff',
+    fontSize: '.9rem',
+    lineHeight: '1.6',
+    paddingLeft: '1.5rem',
+    paddingRight: '1.5rem',
+    paddingTop: '.6rem',
+    paddingBottom: '.6rem',
+    transition: 'color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out',
+  },
+  addLiquidity: {
+    textDecoration: 'none',
+    textAlign: 'center',
+    background: '#eee',
+    color: 'rgb(6, 24, 49)',
+    fontWeight: '700',
+    borderRadius: '8px',
+    fontSize: '.8rem',
+    paddingTop: '.2rem',
+    paddingBottom: '.2rem',
+    paddingLeft: '.2rem',
+    paddingRight: '.2rem',
+    display: 'flex',
+    marginBottom: '1rem',
+    boxShadow: 'rgb(213 213 213) 6px 6px 12px, #f2f5f7 -12px -12px 24px -2px',
+  },
+  psImage: {
+    borderRadius: '50%',
+    boxShadow: 'rgb(213 213 213) 6px 6px 12px, #f2f5f7 -12px -12px 24px -2px',
+    border: '2px solid #061831',
+    padding: '.5rem',
+    marginBottom: '1rem'
   }
 })
 
@@ -303,15 +364,26 @@ class RewardPools extends Component {
     }
 
     return (<div className={ classes.rewardPoolContainer} key={ rewardPool.id } >
+      <div className={ classes.psImage }>
+        <img
+          alt=""
+          src={ require('../../assets/'+rewardPool.image+'.png') }
+          height="50px"
+          width="65px"
+          />
+      </div>
       <Typography variant='h3' className={ classes.poolName }>{ rewardPool.id }</Typography>
-      <Typography variant='h5' className={ classes.poolWebsite }><a href={ rewardPool.link } target="_blank">{ rewardPool.website }</a></Typography>
+      <a href={ rewardPool.link } className={ classes.addLiquidity } target="_blank"> 
+        <span><AddCircleIcon style={{ marginTop: 5, textAlign: 'center', }} /></span> 
+        <span style={{ marginTop: 10, }} >{ rewardPool.website }</span> 
+      </a>
+      {/* <Typography variant='h5' className={ classes.poolWebsite }> <AddCircleIcon /> <a href={ rewardPool.link } target="_blank">{ rewardPool.website }</a></Typography> */}
       <Typography varian='h4' className={ classes.tokensList } align='center'>
         { rewardPool.tokens.length > 0 && `${t('RewardPools.SupportedTokens')}: ` + tokensList  }
         { rewardPool.tokens.length == 0 && t('RewardPools.NoSupportedTokens')  }
       </Typography>
       <Button
-        variant="outlined"
-        color="secondary"
+        className={ classes.btnStake }
         onClick={ () => { if(rewardPool.tokens.length > 0) { this.navigateStake(rewardPool) } } }
       >
         <Typography variant={ 'h4'}>{t('RewardPools.Open')}</Typography>

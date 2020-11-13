@@ -56,9 +56,11 @@ const styles = theme => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
+    color: '#fff'
   },
   footerText: {
     cursor: 'pointer',
+    color: '#fff',
     '& > * + *': {
       marginLeft: theme.spacing(2),
     },
@@ -126,8 +128,15 @@ class Footer extends Component {
         <div className={classes.footer}>
           <div className={classes.footerLinks}>
               <Typography className={ classes.footerText } variant='h6'>
-                <Link href="/">{t('Footer.Home')}</Link> 
-                <Link target ="_blank" href="https://t.me/buysell_network">Telegram</Link>
+                <Link style={{marginRight: '1.5rem'}}>
+                  <img
+                    alt=""
+                    src={ require('../../assets/bs-l.png') }
+                    width="100px"
+                  />
+                </Link>
+                <Link href="/" style={{color: '#fff'}}>{t('Footer.Home')}</Link> 
+                <Link target ="_blank" href="https://t.me/buysell_network" style={{color: '#fff'}}>Telegram</Link>
                 {this.renderRewards()}
               </Typography>
           </div>

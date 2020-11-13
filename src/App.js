@@ -111,7 +111,8 @@ class App extends Component {
               minWidth: '100vw',
               justifyContent: 'center',
               alignItems: 'center',
-              background: "#f9fafb"
+              background: "#061831",
+              color: '#fff'
             }}>
               <Account />
             </div>
@@ -123,7 +124,8 @@ class App extends Component {
               minHeight: '100vh',
               justifyContent: 'center',
               alignItems: 'center',
-              background: "#f9fafb"
+              background: "#061831",
+              color: '#fff'
             }}>
               <Switch>
                 <Route path="/stake">
